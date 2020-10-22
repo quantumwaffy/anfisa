@@ -10,7 +10,6 @@ def index(request):
     city_weather = ''
     friend_output = ''
     selected_icecream = ''
-    # В переменную conclusion будет сохранен текст рекомендации
     conclusion = ''
 
     for friend in friends_db:
@@ -31,9 +30,6 @@ def index(request):
         city = friends_db[selected_friend]
         weather = what_weather(city)
         parsed_temperature = what_temperature(weather)
-
-        # Запишите в conclusion
-        # результат вызова функции what_conclusion() с аргументом parsed_temperature
         conclusion = what_conclusion(parsed_temperature)
         friend_output = f'{selected_friend}, тебе прислали {selected_icecream}!'
         city_weather = f'В городе {city} погода: {weather}'
@@ -44,8 +40,5 @@ def index(request):
         'friend_output': friend_output,
         'city_weather': city_weather,
         'conclusion': conclusion,
-        
-        # Передайте значение conclusion в шаблон
-
     }
     return render(request, 'homepage/index.html', context)
