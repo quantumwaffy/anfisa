@@ -1,2 +1,2 @@
-# Anfisa
-Personal assistant. The site is powered by the Django framework.
+# Anfisa (powered by the Django framework)
+Personal assistant
